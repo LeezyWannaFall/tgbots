@@ -9,7 +9,9 @@ def welcome_message(message):
 
 @bot.message_handler(func=lambda m: True)
 def echo_all(message):
-    bot.reply_to(message, message.text)
+    new_message = list(str(message.text.split(" ")))
+    for i in range(new_message):
+        bot.reply_to(message, "хуе" + new_message[2].text)
 
 bot.infinity_polling()
 
